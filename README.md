@@ -14,3 +14,6 @@ git add * ( To stage files to be committed)
 git commit -m "Initial setup"  
 git push origin dev  
 
+
+## Setup Mongo
+https://phoenixnap.com/kb/docker-mongodb
