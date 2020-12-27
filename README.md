@@ -1,3 +1,5 @@
+# Thank you for your valuable article : https://learnk8s.io/spring-boot-kubernetes-guide
+
 # knote-java
 
 With spring boot, docker and kubernetes
@@ -24,3 +26,15 @@ sudo docker logs mongodb
 sudo docker exec -it mongodb bash  
 mongo -host localhost -port 27017   
 exit  
+
+## Dockerize
+
+docker build -t knote-java . ( -t knote-java is the tag name)  
+
+### Since Mongo db and the spring boot apps are containers, in order to communicate the both containers should be in a docker network  
+docker network create knote 
+
+sudo docker run --name=mongodb  --rm -p 27017:27017 --network=knote -d  mongo  
+  
+sudo docker run --name=knote-java --rm --network=knote -p 8080:8080 -e MONGO_URL=mongodb://mongodb:27017/dev knote-java
+
