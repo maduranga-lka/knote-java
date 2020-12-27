@@ -17,3 +17,10 @@ git push origin dev
 
 ## Setup Mongo
 https://phoenixnap.com/kb/docker-mongodb
+sudo docker pull mongo  
+sudo mkdir -p /mongodata  
+sudo docker run -it -v mongodata:/data/db -p 27017:27017 --name mongodb -d mongo  
+sudo docker logs mongodb  
+sudo docker exec -it mongodb bash  
+mongo -host localhost -port 27017   
+exit  
