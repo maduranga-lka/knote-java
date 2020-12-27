@@ -36,5 +36,25 @@ docker network create knote
 
 sudo docker run --name=mongodb  --rm -p 27017:27017 --network=knote -d  mongo  
   
-sudo docker run --name=knote-java --rm --network=knote -p 8080:8080 -e MONGO_URL=mongodb://mongodb:27017/dev knote-java
+sudo docker run --name=knote-java --rm --network=knote -p 8080:8080 -e MONGO_URL=mongodb://mongodb:27017/dev -d knote-java
+
+## Push to Docker Registry
+
+docker login  
+
+docker tag knote-java maduranga/knote-java:1.0.0 
+
+docker push maduranga/knote-java:1.0.0
+
+### Accordingly the docker command for the app will be changed as below
+
+sudo docker run --name=knote-java --rm --network=knote -p 8080:8080 -e MONGO_URL=mongodb://mongodb:27017/dev -d maduranga/knote-java:1.0.0 
+sudo docker run --name=mongodb  --rm -p 27017:27017 --network=knote -d  maduranga/mongo:4.4.2
+
+## Install kubectl
+https://kubernetes.io/docs/tasks/tools/install-kubectl/  
+
+## Install Minikube
+https://minikube.sigs.k8s.io/docs/start/
+
 
