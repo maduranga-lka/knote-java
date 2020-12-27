@@ -1,4 +1,4 @@
-# Thank you for your valuable article : https://learnk8s.io/spring-boot-kubernetes-guide
+# Thank you https://salaboy.com/about/ for your great great article : https://learnk8s.io/spring-boot-kubernetes-guide
 
 # knote-java
 
