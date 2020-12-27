@@ -48,8 +48,8 @@ docker push maduranga/knote-java:1.0.0
 
 ### Accordingly the docker command for the app will be changed as below
 
-sudo docker run --name=knote-java --rm --network=knote -p 8080:8080 -e MONGO_URL=mongodb://mongodb:27017/dev -d maduranga/knote-java:1.0.0 
-sudo docker run --name=mongodb  --rm -p 27017:27017 --network=knote -d  maduranga/mongo:4.4.2
+sudo docker run --name=knote-java --rm --network=knote -p 8080:8080 -e MONGO_URL=mongodb://mongodb:27017/dev -d maduranga/knote-java:1.0.0   
+sudo docker run --name=mongodb  --rm -p 27017:27017 --network=knote -d  maduranga/mongo:4.4.2  
 
 ## Install kubectl
 https://kubernetes.io/docs/tasks/tools/install-kubectl/  
